@@ -1,0 +1,4 @@
+- `npm install`
+- `npm install gulp -g`
+- `npm install gulp-cli -g`
+- `npm install start`
