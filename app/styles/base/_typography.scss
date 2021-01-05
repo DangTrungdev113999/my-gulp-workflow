@@ -5,19 +5,25 @@
 
 body {
   font-family: Lato;
+  color: $color-blue-light;
 }
 
 .heading {
-  font-family: Lato;
+  text-decoration: none;
   &__primary {
     @include toRem(42px);
     line-height: 50px;
+  }
+  &__secondary {
+    @include toRem(20px);
+    line-height: 26px;
+    font-weight: bold;
   }
   &--white {
     color: $color-white;
   }
 
-  &--bule {
+  &--blue {
     color: $color-blue-dark-1;
   }
   &--bold {
@@ -26,7 +32,6 @@ body {
 }
 
 .text {
-  font-family: Lato;
   &__large {
     @include toRem(18px);
   }
@@ -36,11 +41,21 @@ body {
   &__small {
     @include toRem(15px);
   }
+
+  &--link {
+    text-decoration: none;
+    color: $color-primary;
+    font-weight: bold;
+  }
   &--white {
     color: $color-white;
   }
 
   &--bule {
     color: $color-blue-dark-1;
+  }
+
+  &--bold {
+    font-weight: bold;
   }
 }

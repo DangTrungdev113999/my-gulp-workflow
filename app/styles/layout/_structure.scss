@@ -2,7 +2,7 @@
   padding-top: 28px;
   padding-bottom: 91px;
   background-image: url("../../images/background-dot.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   @include relative();
   &--white {
     background-color: $color-white;

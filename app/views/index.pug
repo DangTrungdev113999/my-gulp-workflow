@@ -1,4 +1,3 @@
-
 extends layout/layout
 
 block vars
@@ -7,16 +6,33 @@ block vars
   -pageTarget='/'
 
 
+mixin article(img, href, title, type)
+  .home-main__solutions__article
+    +link(href)
+      +img(img)(class=`home-main__solutions__article__thumb home-main__solutions__article__thumb--${type}`)
+      +link(href)(class='heading__secondary heading--blue home-main__solutions__article__title  ')= title
+    block
+    .home-main__solutions__article__link 
+        +link(href)(class="text--link") Xem thêm
+        +img('../images/arrow-left.svg', 'arrow-left')
+
+mixin card(img, title) 
+  .home-main__benefits__card
+    +img(img, 'image')(class='home-main__benefits__card__img')
+    .home-main__benefits__card__content 
+      .heading__secondary= title 
+      block
+
 
 block banner
   .container
-    .row.no-gutters(class='home-banner')
-      .col-md-6(class='home-banner__left')
+    .row.justify-content-around(class='home-banner')
+      .col-md-6.col-sm-6.col-xs-12(class='home-banner__left')
         +img('../images/solution.svg', 'solution')
         span.heading__primary.heading--white  
-         span Giải pháp công nghệ 
-         span.heading--bold toàn diện, chính xác và chuyên sâu 
-         span hỗ trợ dịch vụ tài chính cá nhân
+          | Giải pháp công nghệ 
+          span.heading--bold toàn diện, chính xác và chuyên sâu 
+          | hỗ trợ dịch vụ tài chính cá nhân
         div.text__large.text--white APPVEST - Tiên phong trong lĩnh vực tài chính số hóa tại Việt Nam
         button.home-banner__left__btn.btn Dùng thử miễn phí
         .trending-up
@@ -24,9 +40,88 @@ block banner
           span 34,729,176
           +img('../images/trending-up.svg', 'trending-up')
       .col-md-1
-      .col-md-5(class='home-banner__right')
+      .col-md-5.col-sm-6.col-xs-12(class='home-banner__right')
         +img('../images/banner-home.svg', 'banner')
 
 block main
-  .container
-    span home
+  main.home-main 
+    section.home-main__intro
+      .container  
+        span APPVEST được tạo ra với mục đích đồng hành cùng các doanh nghiệp trong quá trình bắt kịp tốc độ thay đổi của thị trường để dẫn đầu xu thế tài chính số hóa đang diễn ra mạnh mẽ trên toàn cầu.
+
+    section.home-main__solutions
+      .container
+        .row.justify-content-around  
+          .col-md-5.col-sm-6.col-xs-12.home-main__solutions__left
+            
+            .home-main__solutions__left__text
+              .heading__primary.heading--blue.heading--bold Bộ giải pháp tổng
+              .heading__primary.heading--blue.heading--bold thể APPVEST
+              div 
+                | Bộ giải pháp tổng thể APPVEST hỗ trợ các dịch vụ tài chính cá nhân ở các ngân hàng và tổ chức tín dụng. APPVEST mang lại 
+                span.text__medium.text--bold nguồn khách hàng giá trị và chất lượng, 
+                | nâng cao trải nghiệm của khách hàng.
+              div Giải pháp của chúng tôi giúp doanh nghiệp tối ưu hóa các quy trình nghiệp vụ, chi phí và nhân lực vận hành.
+
+            +article('../images/eKYC.svg', '', 'eKYC - Định danh khách hàng điện tử', 'eKYC')
+              .home-main__solutions__article__description 
+                | eKYC thực hiện định danh khách 
+                span.text--bold hàng bằng phương pháp điện tử 
+                | thông qua sự hỗ trợ của các công nghệ tiên tiến
+
+          .col-md-5.col-sm-6.col-xs-12.align-self-center.home-main__solutions__right
+            +article('../images/credit-scoring.svg', '', 'Credit Scoring - Chấm điểm tín dụng', 'credit -scoring')
+              .home-main__solutions__article__description 
+                | Credit Scoring là thang điểm nhằm thể hiện
+                span.text--bold của một khách hàng cá nhân
+                | của một khách hàng cá nhân
+            +article('../images/voice-ID.svg', '', 'Credit Scoring - Chấm điểm tín dụng', 'void -ID')
+              .home-main__solutions__article__description 
+                | Credit Scoring là thang điểm nhằm thể hiện
+                span.text--bold của một khách hàng cá nhân
+                | một khách hàng cá nhân
+
+          .col-md-12.col-sm-12.col-xs-12.home-main__solutions__btn
+            button.btn Dùng thử miễn phí
+
+    section.home-main__benefits
+      .container
+        .heading__primary.heading--bold.home-main__benefits__heading Tại sao chọn chúng tôi?
+        div Mô tả cụ thể và chi tiết lý do tại sao bạn nên sử dụng bộ giải pháp APPVEST
+        .row.home-main__benefits__wrapper-card
+          .col-md-4.col-sm-6-col-xs-12 
+            +card('../images/speech-bubble.svg', 'Tiết kiệm chi phí')
+              div
+                span.text--bold Chi phí cạnh tranh 
+                | so với các nhà cung cấp dịch vụ trên thị trường
+          .col-md-4.col-sm-6-col-xs-12 
+              +card('../images/speech-bubble.svg', 'Dễ tích hợp')
+                div
+                  | Tích hợp dễ dàng nhiều dịch vụ vào hệ thống thông qua 
+                  span.text--bold kết nối API
+          .col-md-4.col-sm-6-col-xs-12 
+              +card('../images/speech-bubble.svg', 'Dữ liệu tin cậy')
+                div
+                  | Nguồn dữ liệu
+                  span.text--bold chính thống
+                  | (được sự đồng ý của người dùng và được đảm bảo bởi nhà mạng)
+          .col-md-4.col-sm-6-col-xs-12 
+              +card('../images/speech-bubble.svg', 'Độ chính xác cao')
+                div
+                  | Công nghệ và mô hình liên tục được phát triển để đảm bảo
+                  span.text--bold độ chính xác cao nhất
+                  | ở mỗi thời điểm
+          .col-md-4.col-sm-6-col-xs-12 
+              +card('../images/speech-bubble.svg', 'Tập khách hàng chất lượng')
+                div
+                  | Bộ giải pháp giúp 
+                  span.text--bold chọn lọc ra tập khách hàng có uy tín
+                  | và
+                  span.text--bold cảnh báo rủi ro 
+                  | khi đưa ra quyết định
+          .col-md-4.col-sm-6-col-xs-12 
+              +card('../images/speech-bubble.svg', 'Cam kết bảo mật')
+                div
+                  | Cam kết bảo mật trong các 
+                  span.text--bold giao dịch thông tin
+                  | giữa các bên
