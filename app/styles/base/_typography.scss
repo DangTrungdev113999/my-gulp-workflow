@@ -1,0 +1,46 @@
+@font-face {
+  font-family: Lato;
+  src: url("../../fonts/Lato-Medium.ttf") format("ttf");
+}
+
+body {
+  font-family: Lato;
+}
+
+.heading {
+  font-family: Lato;
+  &__primary {
+    @include toRem(42px);
+    line-height: 50px;
+  }
+  &--white {
+    color: $color-white;
+  }
+
+  &--bule {
+    color: $color-blue-dark-1;
+  }
+  &--bold {
+    font-weight: bold;
+  }
+}
+
+.text {
+  font-family: Lato;
+  &__large {
+    @include toRem(18px);
+  }
+  &__medium {
+    @include toRem(16px);
+  }
+  &__small {
+    @include toRem(15px);
+  }
+  &--white {
+    color: $color-white;
+  }
+
+  &--bule {
+    color: $color-blue-dark-1;
+  }
+}

@@ -1,0 +1,25 @@
+.btn {
+  padding: 18px 32px;
+  background-color: $color-primary;
+  color: $color-white;
+  font-size: 18px;
+  line-height: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+
+  &:hover {
+    opacity: 0.95;
+    box-shadow: 0 5px 30px rgba($color-black, 0.2);
+  }
+
+  &:active {
+    opacity: 1;
+    box-shadow: 0 5px 10px rgba($color-black, 0.2);
+  }
+}

@@ -1,19 +1,32 @@
-doctype html
-//[if gt IE 9]><!
-html(class="no-js", lang="en")
-  //<![endif]
-  head
-    meta(charset="utf-8")
-    //[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><![endif]
-    title=title
-    meta(name="description", content="")
-    meta(name="keywords", content="")
-    meta(name="robots", content="index, follow")
-    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0")
-    link(rel="icon", href="favicon-16x16.png", type="image/x-icon", sizes="16x16")
-    link(rel="stylesheet", href="styles/reset.css")
-    link(rel="stylesheet", href="styles/styles.css")
-  body(class='')
-    p    
-      span(class='test') dang the trung 
-    script(src="scripts/main.js")  
+
+extends layout/layout
+
+block vars
+  -title = 'Trang chủ'
+  -heroBannerClass= 'banner banner--blue'
+  -pageTarget='/'
+
+
+
+block banner
+  .container
+    .row.no-gutters(class='home-banner')
+      .col-md-6(class='home-banner__left')
+        +img('../images/solution.svg', 'solution')
+        span.heading__primary.heading--white  
+         span Giải pháp công nghệ 
+         span.heading--bold toàn diện, chính xác và chuyên sâu 
+         span hỗ trợ dịch vụ tài chính cá nhân
+        div.text__large.text--white APPVEST - Tiên phong trong lĩnh vực tài chính số hóa tại Việt Nam
+        button.home-banner__left__btn.btn Dùng thử miễn phí
+        .trending-up
+          .text__small.text--white Số lượt tra cứu:
+          span 34,729,176
+          +img('../images/trending-up.svg', 'trending-up')
+      .col-md-1
+      .col-md-5(class='home-banner__right')
+        +img('../images/banner-home.svg', 'banner')
+
+block main
+  .container
+    span home

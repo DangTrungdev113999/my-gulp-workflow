@@ -1,0 +1,27 @@
+mixin navItem(name, href)
+  - var color = pageTarget == '/' ? 'navbar__item--white' : 'navbar__item--blue';
+  - var active = pageTarget == href ? 'navbar__item--active' : '';
+  - var classes = ['navbar__item', color, active];
+    +link(href)(class=classes)= name
+
+
+- var color = pageTarget == '/' ? 'white' : 'blue' ;
+
+header
+  .logo 
+    +img(`../../images/logo-${color}.svg`, 'logo')
+    .logo__text(class=`logo__text--${color}`)
+      span Accurate & Secure 
+      span Verification
+  nav 
+    .navbar
+      +navItem('Trang chủ', '/')
+      +navItem('Dịch vụ', 'services.html')
+      +navItem('Hướng dẫn', 'guide.html')
+      +navItem('Về chúng tôi', 'about.html')
+      +navItem('Liên hệ', 'contact.html')
+    .social
+      +link('')
+        +img(`../../images/facebook-${color}.svg`, 'facebook')
+      +link('')
+        +img(`../../images/linkedin-${color}.svg`, 'linkedIn')

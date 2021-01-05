@@ -5,6 +5,7 @@ import pug from "gulp-pug";
 import browserSync from "browser-sync";
 import autoprefixer from "gulp-autoprefixer";
 import sass from "gulp-sass";
+import minifyCss from "gulp-minify-css";
 import uglify from "gulp-uglify";
 import babel from "gulp-babel";
 import imagemin from "gulp-imagemin";
@@ -14,7 +15,13 @@ browserSync.create();
 
 const options = {
   pug: {
-    src: ["app/views/*.pug", "app/views/!blocks/**", "app/views/!layout/**"],
+    src: [
+      "app/views/*.pug",
+      "app/views/pages/*.pug",
+      "app/views/!blocks/**",
+      "app/views/!layout/**",
+      "app/views/!components/**",
+    ],
     all: "app/views/**/*.pug",
     dest: "build",
   },
@@ -70,6 +77,7 @@ const styles = () => {
       })
     )
     .pipe(sass().on("error", sass.logError))
+    .pipe(minifyCss({ compatibility: "ie9" }))
     .pipe(
       autoprefixer({
         browsers: ["last 2 versions"],
@@ -106,13 +114,17 @@ const images = () => {
         })
       )
     )
-    .pipe(dest(options.images.dest));
+    .pipe(dest(options.images.dest))
+    .pipe(browserSync.stream());
 };
 
-const fonts = () => src(options.fonts.src).pipe(dest(options.fonts.dest));
+const fonts = () =>
+  src(options.fonts.src)
+    .pipe(dest(options.fonts.dest))
+    .pipe(browserSync.stream());
 
 const cleanOldBuildFile = async () => {
-  return Promise.resolve(del.sync("public"));
+  return Promise.resolve(del.sync("build"));
 };
 
 const watchFiles = () => {

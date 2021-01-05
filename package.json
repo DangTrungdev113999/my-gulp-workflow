@@ -11,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "del": "^6.0.0"
+    "bootstrap": "^4.5.3",
+    "del": "^6.0.0",
+    "gulp-minify-css": "^1.2.4"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",

@@ -1,0 +1,68 @@
+header {
+  width: 100%;
+  max-width: 1776px;
+  margin: 0 auto;
+  @include flex();
+}
+
+.logo {
+  flex: 1;
+  @include flex();
+  img {
+    width: 157px;
+    margin-right: 14px;
+    margin-left: 22px;
+  }
+  &__text {
+    @include flex(column);
+    @include toRem(13px);
+    line-height: 16px;
+    color: $color-white;
+
+    &--white {
+      color: $color-white;
+    }
+
+    &--blue {
+      color: $color-blue-light;
+    }
+  }
+}
+
+nav {
+  @include flex(row, center, center);
+  & .navbar {
+    &__item {
+      margin: 0 22px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+
+      &--white {
+        color: $color-white;
+      }
+
+      &--blue {
+        color: $color-blue-light;
+      }
+
+      &--active {
+        color: $color-primary;
+      }
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  & .social {
+    & a {
+      margin: 0 22px;
+      cursor: pointer;
+    }
+  }
+}
