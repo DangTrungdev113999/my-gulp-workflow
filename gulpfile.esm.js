@@ -34,7 +34,7 @@ const options = {
     dest: "build/scripts",
   },
   images: {
-    src: "app/images/*.+(png|jpeg|jpg|gif|svg)",
+    src: "app/images/**/*.+(png|jpeg|jpg|gif|svg)",
     dest: "build/images",
   },
   fonts: {
@@ -131,6 +131,7 @@ const watchFiles = () => {
   watch(options.pug.all, views);
   watch(options.styles.src, styles);
   watch(options.scripts.src, scripts);
+  watch(options.images.src, images);
 };
 
 const buildFile = series(

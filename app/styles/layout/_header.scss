@@ -31,6 +31,10 @@ header {
 
 nav {
   @include flex(row, center, center);
+  @include minWidth(275px) {
+    display: none;
+  }
+
   & .navbar {
     &__item {
       margin: 0 22px;

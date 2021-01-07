@@ -1,14 +1,23 @@
 .home-banner {
-  margin-top: 119px;
+  margin-top: 110px;
 
   &__left {
+    max-width: 594px;
     margin-top: 100px;
-    > img {
-      margin-right: -5px;
-    }
-
     > div {
-      margin-top: 18px;
+      &:first-child {
+        > img {
+          margin-right: -5px;
+        }
+
+        > span {
+          max-width: 594px;
+        }
+      }
+
+      &:nth-child(2) {
+        margin-top: 18px;
+      }
     }
 
     &__btn {
@@ -23,6 +32,82 @@
         line-height: 30px;
         margin-right: 9px;
       }
+    }
+  }
+
+  &__right {
+    width: 560px;
+    height: 665px;
+    position: relative;
+    img {
+      position: absolute;
+    }
+    &--mobile {
+      top: 167px;
+
+      z-index: 10;
+    }
+    &--user {
+      left: 198px;
+      top: 3px;
+      z-index: $z-index9;
+    }
+    &--user-shadow {
+      top: 230px;
+      left: 159px;
+      mix-blend-mode: multiply;
+      z-index: $z-index8;
+    }
+    &--around-items {
+      opacity: 0.23;
+      top: 60px;
+      left: 137px;
+      z-index: $z-index8;
+    }
+
+    &--around {
+      top: 60px;
+      left: 137px;
+      z-index: 1;
+    }
+
+    &--credit-scoring {
+      top: 403px;
+      left: 55px;
+    }
+
+    &--ekyc-profile {
+      // mix-blend-mode: soft-light;
+      top: 183px;
+      right: -38px;
+      z-index: $z-index8;
+    }
+
+    &--voice-ID {
+      top: 35px;
+      z-index: $z-index9;
+    }
+    &--cloud-1 {
+      top: 180px;
+    }
+    &--cloud-5 {
+      top: 433px;
+      left: 200px;
+      z-index: $z-index8;
+    }
+    &--cloud-4 {
+      top: 138px;
+      right: 17px;
+    }
+    &--cloud-2 {
+      top: 155px;
+      right: 283px;
+      z-index: $z-index9;
+    }
+    &--cloud-3 {
+      top: 88px;
+      right: 198px;
+      z-index: $z-index8;
     }
   }
 }
@@ -63,24 +148,31 @@
     }
 
     &__article {
-      max-width: 565px;
+      width: 100%;
       margin-top: 72px;
       &__thumb {
         width: 100%;
         background-color: #f9f9fc;
+        box-sizing: border-box;
         &--eKYC {
+          height: 550px;
           padding: 53px 83px;
         }
         &--credit-scoring {
+          height: 340px;
           padding: 34px 64px;
         }
         &--void-ID {
+          height: 361px;
           padding: 25px 78px;
         }
       }
+
+      a {
+        text-decoration: none;
+      }
       &__title {
         display: block;
-        text-decoration: none;
         margin-top: 28px;
       }
       &__description {

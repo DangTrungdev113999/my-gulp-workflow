@@ -6,19 +6,20 @@ block vars
   -pageTarget='/'
 
 
-mixin article(img, href, title, type)
-  .home-main__solutions__article
+mixin article(imgSrc, href, title, type)
+  - var imgClasses = ['home-main__solutions__article__thumb', ` home-main__solutions__article__thumb--${type}`, animation ];
+  div(class="home-main__solutions__article")&attributes(attributes)
     +link(href)
-      +img(img)(class=`home-main__solutions__article__thumb home-main__solutions__article__thumb--${type}`)
-      +link(href)(class='heading__secondary heading--blue home-main__solutions__article__title  ')= title
+      +img(imgSrc, type)(class=imgClasses)
+      .heading__secondary.heading--blue.home-main__solutions__article__title= title
     block
     .home-main__solutions__article__link 
         +link(href)(class="text--link") Xem thêm
-        +img('../images/arrow-left.svg', 'arrow-left')
+        +img('../images/arrow-left.svg', 'arrow-left')(loading="lazy")
 
-mixin card(img, title) 
-  .home-main__benefits__card
-    +img(img, 'image')(class='home-main__benefits__card__img')
+mixin card(imgSrc, title) 
+  .home-main__benefits__card(data-aos="fade-up") 
+    +img(imgSrc, 'card')(class='home-main__benefits__card__img', loading="lazy")
     .home-main__benefits__card__content 
       .heading__secondary= title 
       block
@@ -26,102 +27,117 @@ mixin card(img, title)
 
 block banner
   .container
-    .row.justify-content-around(class='home-banner')
-      .col-md-6.col-sm-6.col-xs-12(class='home-banner__left')
-        +img('../images/solution.svg', 'solution')
-        span.heading__primary.heading--white  
-          | Giải pháp công nghệ 
-          span.heading--bold toàn diện, chính xác và chuyên sâu 
-          | hỗ trợ dịch vụ tài chính cá nhân
-        div.text__large.text--white APPVEST - Tiên phong trong lĩnh vực tài chính số hóa tại Việt Nam
-        button.home-banner__left__btn.btn Dùng thử miễn phí
+    .row.justify-content-lg-between(class='home-banner')
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12(class='home-banner__left')
+        div(data-aos="fade-down", data-aos-duration="800")
+          +img('../images/solution.svg', 'solution')(loading="eager")
+          span.heading__primary.heading--white
+            | Giải pháp công nghệ 
+            b toàn diện, chính xác và chuyên sâu 
+            | hỗ trợ dịch vụ tài chính cá nhân
+        div.text__large.text--white(data-aos="fade-right", data-aos-duration="800") APPVEST - Tiên phong trong lĩnh vực tài chính số hóa tại Việt Nam
+        button.home-banner__left__btn.btn(data-aos="fade-left", data-aos-duration="800") Dùng thử miễn phí
         .trending-up
           .text__small.text--white Số lượt tra cứu:
           span 34,729,176
-          +img('../images/trending-up.svg', 'trending-up')
-      .col-md-1
-      .col-md-5.col-sm-6.col-xs-12(class='home-banner__right')
-        +img('../images/banner-home.svg', 'banner')
+          +img('../images/trending-up.svg', 'trending-up')(loading="eager")
+      .col-lg-5.col-md-6.col-sm-6.col-xs-12
+        .home-banner__right
+          +img('../images/illutration1/mobile.svg')(class="home-banner__right--mobile")(data-aos-duration="400", data-aos="zoom-in")
+          +img('../images/illutration1/user.svg')(class="home-banner__right--user")(data-aos-delay="200", data-aos="fade-down")
+          +img('../images/illutration1/user-shadow.svg')(class="home-banner__right--user-shadow")(data-aos-delay="200", data-aos="zoom-in")
+          +img('../images/illutration1/around.svg')(class="home-banner__right--around")(data-aos-delay="300", data-aos="zoom-in")
+          +img('../images/illutration1/around-items.svg')(class="home-banner__right--around-items")(data-aos-delay="300", data-aos="zoom-in")
+          +img('../images/illutration1/credit-scoring.svg')(class="home-banner__right--credit-scoring")(data-aos-delay="300", data-aos="zoom-in")
+          +img('../images/illutration1/ekyc-profile.svg')(class="home-banner__right--ekyc-profile")(data-aos-delay="350", data-aos="zoom-in-left")
+          +img('../images/illutration1/voice-ID.svg')(class="home-banner__right--voice-ID")( data-aos-delay="350", data-aos="zoom-in-right")
+          +img('../images/illutration1/cloud-1.svg')(class="home-banner__right--cloud-1")( data-aos-delay="500", data-aos="zoom-in")
+          +img('../images/illutration1/cloud-5.svg')(class="home-banner__right--cloud-5")( data-aos-delay="500", data-aos="zoom-in")
+          +img('../images/illutration1/cloud-4.svg')(class="home-banner__right--cloud-4")( data-aos-delay="500", data-aos="zoom-in")
+          +img('../images/illutration1/cloud-2.svg')(class="home-banner__right--cloud-2")( data-aos-delay="500", data-aos="zoom-in")
+          +img('../images/illutration1/cloud-3.svg')(class="home-banner__right--cloud-3")( data-aos-delay="500", data-aos="zoom-in")
+
+        //- +img('../images/banner-home.svg', 'banner')(loading="eager", data-aos="zoom-in", data-aos-delay="300")
 
 block main
   main.home-main 
-    section.home-main__intro
+    section.home-main__intro(data-aos="fade-up")
       .container  
-        span APPVEST được tạo ra với mục đích đồng hành cùng các doanh nghiệp trong quá trình bắt kịp tốc độ thay đổi của thị trường để dẫn đầu xu thế tài chính số hóa đang diễn ra mạnh mẽ trên toàn cầu.
+        span APPVEST được tạo ra với mục đích đồng hành cùng các doanh nghiệp trong quá trình bắt kịp tốc độ thay đổi của thị trường để dẫn đầu xu thế tài chính số hóa đang diễn ra mạnh mẽ trên toàn cầu. 
 
     section.home-main__solutions
       .container
         .row.justify-content-around  
           .col-md-5.col-sm-6.col-xs-12.home-main__solutions__left
             
-            .home-main__solutions__left__text
+            .home-main__solutions__left__text(data-aos="fade-up")
               .heading__primary.heading--blue.heading--bold Bộ giải pháp tổng
               .heading__primary.heading--blue.heading--bold thể APPVEST
               div 
-                | Bộ giải pháp tổng thể APPVEST hỗ trợ các dịch vụ tài chính cá nhân ở các ngân hàng và tổ chức tín dụng. APPVEST mang lại 
+                | Bộ giải pháp tổng thể APPVEST hỗ trợ các dịch vụ tài chính cá nhân ở các ngân hàng và tổ chức tín dụng. APPVEST mang lại  
                 span.text__medium.text--bold nguồn khách hàng giá trị và chất lượng, 
-                | nâng cao trải nghiệm của khách hàng.
-              div Giải pháp của chúng tôi giúp doanh nghiệp tối ưu hóa các quy trình nghiệp vụ, chi phí và nhân lực vận hành.
+                | nâng cao trải nghiệm của khách hàng. 
+              div Giải pháp của chúng tôi giúp doanh nghiệp tối ưu hóa các quy trình nghiệp vụ, chi phí và nhân lực vận hành. 
 
-            +article('../images/eKYC.svg', '', 'eKYC - Định danh khách hàng điện tử', 'eKYC')
-              .home-main__solutions__article__description 
-                | eKYC thực hiện định danh khách 
-                span.text--bold hàng bằng phương pháp điện tử 
-                | thông qua sự hỗ trợ của các công nghệ tiên tiến
+            +article('../images/eKYC.svg', '', 'eKYC - Định danh khách hàng điện tử', 'eKYC')(data-aos="fade-right")
+              .home-main__solutions__article__description
+                | eKYC thực hiện định danh khách  
+                b hàng bằng phương pháp điện tử   
+                | thông qua sự hỗ trợ của các công nghệ tiên tiến 
 
           .col-md-5.col-sm-6.col-xs-12.align-self-center.home-main__solutions__right
-            +article('../images/credit-scoring.svg', '', 'Credit Scoring - Chấm điểm tín dụng', 'credit -scoring')
+            +article('../images/credit-scoring.svg', '', 'Credit Scoring - Chấm điểm tín dụng', 'credit-scoring')(data-aos="fade-left")
               .home-main__solutions__article__description 
-                | Credit Scoring là thang điểm nhằm thể hiện
-                span.text--bold của một khách hàng cá nhân
-                | của một khách hàng cá nhân
-            +article('../images/voice-ID.svg', '', 'Credit Scoring - Chấm điểm tín dụng', 'void -ID')
+                | Credit Scoring là thang điểm nhằm thể hiện 
+                b của một khách hàng cá nhân  
+                | của một khách hàng cá nhân 
+            +article('../images/voice-ID.svg', '', 'Credit Scoring - Chấm điểm tín dụng', 'void-ID')(data-aos="fade-left")
               .home-main__solutions__article__description 
-                | Credit Scoring là thang điểm nhằm thể hiện
-                span.text--bold của một khách hàng cá nhân
-                | một khách hàng cá nhân
+                | Credit Scoring là thang điểm nhằm thể hiện 
+                b của một khách hàng cá nhân  
+                | một khách hàng cá nhân 
 
           .col-md-12.col-sm-12.col-xs-12.home-main__solutions__btn
-            button.btn Dùng thử miễn phí
+            button.btn(data-aos="fade-up") Dùng thử miễn phí 
 
     section.home-main__benefits
       .container
-        .heading__primary.heading--bold.home-main__benefits__heading Tại sao chọn chúng tôi?
-        div Mô tả cụ thể và chi tiết lý do tại sao bạn nên sử dụng bộ giải pháp APPVEST
+        .heading__primary.heading--bold.home-main__benefits__heading(data-aos="fade-up")  Tại sao chọn chúng tôi? 
+        div(data-aos="fade-up")  Mô tả cụ thể và chi tiết lý do tại sao bạn nên sử dụng bộ giải pháp APPVEST 
         .row.home-main__benefits__wrapper-card
           .col-md-4.col-sm-6-col-xs-12 
             +card('../images/speech-bubble.svg', 'Tiết kiệm chi phí')
               div
-                span.text--bold Chi phí cạnh tranh 
-                | so với các nhà cung cấp dịch vụ trên thị trường
+                b Chi phí cạnh tranh  
+                | so với các nhà cung cấp dịch vụ trên thị trường  
           .col-md-4.col-sm-6-col-xs-12 
               +card('../images/speech-bubble.svg', 'Dễ tích hợp')
                 div
-                  | Tích hợp dễ dàng nhiều dịch vụ vào hệ thống thông qua 
-                  span.text--bold kết nối API
+                  | Tích hợp dễ dàng nhiều dịch vụ vào hệ thống thông qua  
+                  b kết nối API  
           .col-md-4.col-sm-6-col-xs-12 
               +card('../images/speech-bubble.svg', 'Dữ liệu tin cậy')
                 div
-                  | Nguồn dữ liệu
-                  span.text--bold chính thống
-                  | (được sự đồng ý của người dùng và được đảm bảo bởi nhà mạng)
+                  | Nguồn dữ liệu 
+                  b chính thống  
+                  | (được sự đồng ý của người dùng và được đảm bảo bởi nhà mạng) 
           .col-md-4.col-sm-6-col-xs-12 
               +card('../images/speech-bubble.svg', 'Độ chính xác cao')
                 div
-                  | Công nghệ và mô hình liên tục được phát triển để đảm bảo
-                  span.text--bold độ chính xác cao nhất
-                  | ở mỗi thời điểm
+                  | Công nghệ và mô hình liên tục được phát triển để đảm bảo 
+                  b độ chính xác cao nhất 
+                  | ở mỗi thời điểm 
           .col-md-4.col-sm-6-col-xs-12 
               +card('../images/speech-bubble.svg', 'Tập khách hàng chất lượng')
-                div
-                  | Bộ giải pháp giúp 
-                  span.text--bold chọn lọc ra tập khách hàng có uy tín
-                  | và
-                  span.text--bold cảnh báo rủi ro 
-                  | khi đưa ra quyết định
+                div 
+                  | Bộ giải pháp giúp  
+                  b chọn lọc ra tập khách hàng có uy tín  
+                  | và 
+                  b cảnh báo rủi ro   
+                  | khi đưa ra quyết định 
           .col-md-4.col-sm-6-col-xs-12 
               +card('../images/speech-bubble.svg', 'Cam kết bảo mật')
                 div
                   | Cam kết bảo mật trong các 
-                  span.text--bold giao dịch thông tin
-                  | giữa các bên
+                  b giao dịch thông tin 
+                  | giữa các bên 

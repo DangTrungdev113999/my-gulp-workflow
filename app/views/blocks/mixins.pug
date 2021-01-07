@@ -8,9 +8,9 @@ mixin link(href)
 			if block
 				block
 
-mixin img(src, alt)
-	if !alt
-		img(src=src, alt="")&attributes(attributes)
+mixin img(imgSrc, alt, lazy=false)
+	if lazy
+		img.img-lazy(data-lazy=imgSrc, alt=`${alt ? alt : ''}`)&attributes(attributes)
 	else
-		img(src=src, alt=alt)&attributes(attributes)
+		img(src=imgSrc, alt=`${alt ? alt : ''}`)&attributes(attributes)
 

@@ -9,7 +9,7 @@ mixin navItem(name, href)
 
 header
   .logo 
-    +img(`../../images/logo-${color}.svg`, 'logo')
+    +img(`../../images/logo-${color}.svg`, 'logo')(loading="eager")
     .logo__text(class=`logo__text--${color}`)
       span Accurate & Secure 
       span Verification
@@ -22,6 +22,6 @@ header
       +navItem('Liên hệ', 'contact.html')
     .social
       +link('')
-        +img(`../../images/facebook-${color}.svg`, 'facebook')
+        +img(`../../images/facebook-${color}.svg`, 'facebook')(loading="eager")
       +link('')
-        +img(`../../images/linkedin-${color}.svg`, 'linkedIn')
+        +img(`../../images/linkedin-${color}.svg`, 'linkedIn')(loading="eager")
