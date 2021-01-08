@@ -1,0 +1,30 @@
+mixin listItem
+  .modem-technology__left__list-item
+    +img('../../../images/icons/check.jpg', 'check')(loaidng="lazy")
+    div 
+      block
+  
+
+section.modem-technology
+  .container
+    .row.justify-content-between
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12(class="modem-technology__right", data-aos="fade-right")
+        +img('../images/modern-technology.svg', 'modern-technology')(loading="lazy")
+      .col-lg-5.col-md-6.col-sm-12.col-xs-12(class="modem-technology__left", data-aos="fade-left")
+        .heading__primary.heading--bold.modem-technology__left__heading  Công nghệ hiện đại dẫn đầu thị trường
+        p  APPVEST luôn cập nhật và ứng dụng các công nghệ hiện đại nhất trong việc phát triển và nâng cấp các bộ giải pháp
+        .modem-technology__left__list-items
+          +listItem
+            span  
+              | Áp dụng 
+              b AI 
+              | vào bài toán Credit Scoring
+          +listItem
+            span  
+              | Nguồn 
+              b Big Data  
+              | uy tín giúp xác thực khách hàng
+          +listItem
+            span  
+              b Cloud Computing 
+              | đảm bảo tốc độ xử lý ưu việt nhất

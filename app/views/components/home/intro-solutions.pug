@@ -1,0 +1,50 @@
+mixin article(imgSrc, href, title, type)
+  - var imgClasses = ['solutions__article__thumb', `solutions__article__thumb--${type}`, animation ];
+  div(class="solutions__article")&attributes(attributes)
+    +link(href)
+      +img(imgSrc, type)(class=imgClasses)
+      .heading__secondary.heading--blue.solutions__article__title= title
+    block
+    .solutions__article__link 
+      +link(href)(class="text--link") Xem thêm
+      +img('../images/arrow-left.svg', 'arrow-left')(loading="lazy")
+
+
+section.intro(data-aos="fade-up")
+  .container  
+    span APPVEST được tạo ra với mục đích đồng hành cùng các doanh nghiệp trong quá trình bắt kịp tốc độ thay đổi của thị trường để dẫn đầu xu thế tài chính số hóa đang diễn ra mạnh mẽ trên toàn cầu. 
+
+section.solutions
+  .container
+    .row.justify-content-between  
+      .col-md-5.col-sm-6.col-xs-12.home-main__solutions__left
+        
+        .solutions__left__text(data-aos="fade-up")
+          .heading__primary.heading--blue.heading--bold Bộ giải pháp tổng
+          .heading__primary.heading--blue.heading--bold thể APPVEST
+          p 
+            | Bộ giải pháp tổng thể APPVEST hỗ trợ các dịch vụ tài chính cá nhân ở các ngân hàng và tổ chức tín dụng. APPVEST mang lại  
+            b nguồn khách hàng giá trị và chất lượng, 
+            | nâng cao trải nghiệm của khách hàng. 
+          p Giải pháp của chúng tôi giúp doanh nghiệp tối ưu hóa các quy trình nghiệp vụ, chi phí và nhân lực vận hành. 
+
+        +article('../images/eKYC.svg', '', 'eKYC - Định danh khách hàng điện tử', 'eKYC')(data-aos="fade-right")
+          .solutions__article__description
+            | eKYC thực hiện định danh khách  
+            b hàng bằng phương pháp điện tử   
+            | thông qua sự hỗ trợ của các công nghệ tiên tiến 
+
+      .col-md-5.col-sm-6.col-xs-12.align-self-center.solutions__right
+        +article('../images/credit-scoring.svg', '', 'Credit Scoring - Chấm điểm tín dụng', 'credit-scoring')(data-aos="fade-left")
+          .solutions__article__description 
+            | Credit Scoring là thang điểm nhằm thể hiện 
+            b của một khách hàng cá nhân  
+            | của một khách hàng cá nhân 
+        +article('../images/voice-ID.svg', '', 'Credit Scoring - Chấm điểm tín dụng', 'void-ID')(data-aos="fade-left")
+          .solutions__article__description 
+            | Credit Scoring là thang điểm nhằm thể hiện 
+            b của một khách hàng cá nhân  
+            | một khách hàng cá nhân 
+
+      .col-md-12.col-sm-12.col-xs-12.solutions__btn
+        button.btn(data-aos="fade-up") Dùng thử miễn phí 

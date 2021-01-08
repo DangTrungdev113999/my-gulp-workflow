@@ -1,0 +1,48 @@
+mixin card(imgSrc, title) 
+  .benefits__card(data-aos="fade-up")
+    +img(imgSrc, 'card')(class='benefits__card__img', loading="lazy")
+    .benefits__card__content
+      .heading__secondary= title 
+      block
+
+section.benefits
+  .container
+    .heading__primary.heading--bold.benefits__heading(data-aos="fade-up")  Tại sao chọn chúng tôi? 
+    p(data-aos="fade-up")  Mô tả cụ thể và chi tiết lý do tại sao bạn nên sử dụng bộ giải pháp APPVEST 
+    .row.benefits__wrapper-card
+      .col-lg-4.col-md-6.col-sm-12.col-xs-12 
+        +card('../images/icons/speech-bubble.jpg', 'Tiết kiệm chi phí')
+          p
+            b Chi phí cạnh tranh  
+            | so với các nhà cung cấp dịch vụ trên thị trường  
+      .col-lg-4.col-md-6.col-sm-12.col-xs-12 
+          +card('../images/icons/asset-management.jpg', 'Dễ tích hợp')
+            p
+              | Tích hợp dễ dàng nhiều dịch vụ vào hệ thống thông qua  
+              b kết nối API  
+      .col-lg-4.col-md-6.col-sm-12.col-xs-12 
+          +card('../images/icons/pie-chart.jpg', 'Dữ liệu tin cậy')
+            p
+              | Nguồn dữ liệu 
+              b chính thống  
+              | (được sự đồng ý của người dùng và được đảm bảo bởi nhà mạng) 
+      .col-lg-4.col-md-6.col-sm-12.col-xs-12 
+          +card('../images/icons/hight.jpg', 'Độ chính xác cao')
+            p
+              | Công nghệ và mô hình liên tục được phát triển để đảm bảo 
+              b độ chính xác cao nhất 
+              | ở mỗi thời điểm 
+      .col-lg-4.col-md-6.col-sm-12.col-xs-12 
+          +card('../images/icons/recruitment.jpg', 'Tập khách hàng chất lượng')
+            p 
+              | Bộ giải pháp giúp  
+              b chọn lọc ra tập khách hàng có uy tín  
+              | và 
+              b cảnh báo rủi ro   
+              | khi đưa ra quyết định 
+      .col-lg-4.col-md-6.col-sm-12.col-xs-12 
+          +card('../images/icons/cyber-security.jpg', 'Cam kết bảo mật')
+            p
+              | Cam kết bảo mật trong các 
+              b giao dịch thông tin 
+              | giữa các bên 

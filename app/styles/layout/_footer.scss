@@ -1,0 +1,103 @@
+.footer {
+  background: $color-blue-dark-3;
+  color: $color-white;
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: $color-white;
+    opacity: 0.6;
+    cursor: pointer;
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  b {
+    font-size: 18px;
+    line-height: 28px;
+    padding-bottom: 24px;
+  }
+
+  .line {
+    border-top: 1px solid #313641;
+  }
+
+  &__top {
+    padding-top: 93px;
+    padding-bottom: 83px;
+
+    @include maxWidth(991.98px) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    &__logo {
+      p {
+        padding-top: 14px;
+        font-size: 13px;
+        line-height: 16px;
+        color: #ffffff;
+        opacity: 0.6;
+      }
+    }
+
+    &__contact {
+      @include maxWidth(991.98px) {
+        margin-top: 30px;
+      }
+      & p {
+        opacity: 0.6;
+        line-height: 26px;
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+        &:nth-child(3) {
+          text-decoration: underline;
+        }
+      }
+      & .social {
+        margin-top: 15px;
+        @include flex();
+        a {
+          margin-top: 0px;
+        }
+        & img {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    &__links {
+      @include maxWidth(991.98px) {
+        margin-top: 30px;
+      }
+      b {
+        font-size: 18px;
+        line-height: 28px;
+        padding-bottom: 24px;
+      }
+    }
+
+    &__another {
+      margin-top: 40px;
+      @include maxWidth(991.98px) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__buttom {
+    opacity: 0.6;
+    padding: 32px 0;
+    & #backToTop {
+      @include flex(row, null, center);
+      cursor: pointer;
+      @include maxWidth(991.98px) {
+        margin-top: 30px;
+      }
+    }
+  }
+}

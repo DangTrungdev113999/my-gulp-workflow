@@ -26,9 +26,8 @@ function lazyloadImg() {
 }
 
 lazyloadImg();
-// AOS.init();
 
 AOS.init({
-  disable: "mobile", // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  disable: "mobile",
   disableMutationObserver: true,
 });

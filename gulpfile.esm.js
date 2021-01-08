@@ -132,6 +132,7 @@ const watchFiles = () => {
   watch(options.styles.src, styles);
   watch(options.scripts.src, scripts);
   watch(options.images.src, images);
+  watch(options.fonts.src, images);
 };
 
 const buildFile = series(
@@ -144,6 +145,7 @@ exports.views = views;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.images = images;
+exports.fonts = fonts;
 exports.watch = watchChange;
 exports.build = buildFile;
 exports.default = buildFile;

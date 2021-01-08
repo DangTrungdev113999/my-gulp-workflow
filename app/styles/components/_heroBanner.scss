@@ -1,0 +1,31 @@
+.banner {
+  padding-top: 28px;
+  padding-bottom: 72px;
+  background-image: url("../../images/background-dot.png");
+  background-repeat: repeat;
+  @include relative();
+  @include maxWidth(991.98px) {
+    padding-bottom: 20px;
+  }
+  &--white {
+    background-color: $color-white;
+  }
+
+  &--blue {
+    background-color: $color-blue-dark-2;
+  }
+
+  .floading-chat {
+    @include absolute($right: 40px, $bottom: 41px);
+    cursor: pointer;
+    &:hover {
+      opacity: 0.95;
+      box-shadow: 0 5px 30px rgba($color-black, 0.2);
+    }
+
+    &:active {
+      opacity: 1;
+      box-shadow: 0 5px 10px rgba($color-black, 0.2);
+    }
+  }
+}

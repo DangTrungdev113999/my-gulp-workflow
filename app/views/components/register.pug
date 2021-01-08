@@ -1,0 +1,36 @@
+mixin input(label)   
+  b= label
+  input&attributes(attributes)
+
+mixin textarea(label)
+  b= label
+  textarea&attributes(attributes)
+
+section.register    
+  .container
+    .row.justify-content-lg-between  
+      .col-lg-5.col-md-6.col-sm-12.col-xs-12(class='register__left', data-aos="zoom-in")
+        .heading__primary.heading--bold 
+          | Đăng ký và trải nghiệm miễn phí trường 
+          +tag('Còn 12 ngày')
+        p  
+          | Đăng ký ngay và trải nghiệm 
+          b miễn phí 
+          | trọn vẹn những tính năng ưu việt của bộ giải pháp tổng thể APPEST
+        p Hotline liên hệ:
+        +link('tel:0388 001 966') 086 278 6899
+      .col-lg-5.col-md-6.col-sm-12.col-xs-12(class='register__right', data-aos="zoom-in")
+        form.register__form
+          .row
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              +input('Họ và tên')(placeholder='Nhập họ và tên', name="fullname")
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              +input('Email')(placeholder='Nhập email', name="email")
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              +input('Số điện thoại')(placeholder='Nhập số điện thoại', name="phone")
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              +input('Công ty')(placeholder='Nhập tên công ty', name="conpany")
+            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+              +textarea('Nội dung')(row="20")(placeholder='Nhập nội dung ...', name="content")
+            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+              button.btn Đăng ký ngay

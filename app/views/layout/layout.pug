@@ -2,7 +2,8 @@ block mixins
   include ../blocks/mixins
 block vars
   -title = ''
-  -heroBannerClass= 'banner'
+  -heroBannerClass= ''
+  -pageTarget=''
 
 doctype html
 //[if gt IE 9]><!
@@ -25,7 +26,7 @@ html(class="no-js", lang="en")
       section(class=heroBannerClass)
         include ./header
         block banner
-        //- +img('../../images/floating-chat.svg', 'floating-chat')(class="floading-chat")
+        +img('../../images/floating-chat.svg', 'floating-chat')(class="floading-chat")
     block main
     include ./footer
     include ../blocks/scripts

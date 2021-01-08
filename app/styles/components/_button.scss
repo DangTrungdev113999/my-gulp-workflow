@@ -6,12 +6,9 @@
   line-height: 20px;
   border: none;
   outline: none;
+  letter-spacing: -0.1px;
   cursor: pointer;
   transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
 
   &:hover {
     opacity: 0.95;

@@ -1,3 +1,4 @@
+
 mixin link(href)
 	if !href
 		a(href="javascript:void(0)")&attributes(attributes)
@@ -14,3 +15,5 @@ mixin img(imgSrc, alt, lazy=false)
 	else
 		img(src=imgSrc, alt=`${alt ? alt : ''}`)&attributes(attributes)
 
+mixin tag(tag)
+	span.tag= tag

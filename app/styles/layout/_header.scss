@@ -10,15 +10,19 @@ header {
   @include flex();
   img {
     width: 157px;
+    height: 28px;
     margin-right: 14px;
     margin-left: 22px;
   }
   &__text {
     @include flex(column);
     @include toRem(13px);
-    line-height: 16px;
     color: $color-white;
-
+    > span {
+      line-height: 0;
+      font-size: 13px;
+      line-height: 16px;
+    }
     &--white {
       color: $color-white;
     }
@@ -31,7 +35,7 @@ header {
 
 nav {
   @include flex(row, center, center);
-  @include minWidth(275px) {
+  @include maxWidth(991.98px) {
     display: none;
   }
 
