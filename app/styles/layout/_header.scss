@@ -2,7 +2,7 @@ header {
   width: 100%;
   max-width: 1776px;
   margin: 0 auto;
-  @include flex();
+  @include flex(row, center, center);
 }
 
 .logo {
@@ -13,6 +13,10 @@ header {
     height: 28px;
     margin-right: 14px;
     margin-left: 22px;
+    @include maxWidth(991.98px) {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
   }
   &__text {
     @include flex(column);
@@ -35,11 +39,11 @@ header {
 
 nav {
   @include flex(row, center, center);
-  @include maxWidth(991.98px) {
-    display: none;
-  }
 
   & .navbar {
+    @include maxWidth(991.98px) {
+      display: none;
+    }
     &__item {
       margin: 0 22px;
       text-decoration: none;
@@ -68,9 +72,59 @@ nav {
   }
 
   & .social {
+    @include maxWidth(991.98px) {
+      display: none;
+    }
     & a {
       margin: 0 22px;
       cursor: pointer;
     }
+  }
+
+  & .menu {
+    display: none;
+    cursor: pointer;
+    @include maxWidth(991.98px) {
+      margin-right: 10px;
+      display: block;
+    }
+  }
+}
+
+.navbarLeft {
+  width: 100%;
+  height: 100vh;
+  @include fixed(0px, 0px);
+  display: none;
+  background-color: rgba(59, 82, 110, 0.6);
+  z-index: $z-index8;
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  & .menuItems {
+    margin-left: 75px;
+    width: 80%;
+    height: 100vh;
+    float: right;
+    @include flex(column, null, flex-end);
+    background-color: $color-white;
+    transform: translateX(80%);
+    transition: all 0.3s ease;
+    z-index: $z-index9;
+
+    &.sweep-to-left {
+      transition: all 0.3s ease ease;
+      transform: translateX(0);
+    }
+
+    > a {
+      font-weight: bold;
+      text-decoration: none;
+      color: $color-blue-dark-1;
+    }
+  }
+  &.fade {
+    opacity: 1;
+    transition: all 0.3s ease;
   }
 }

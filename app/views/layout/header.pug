@@ -4,7 +4,6 @@ mixin navItem(name, href)
   - var classes = ['navbar__item', color, active];
     +link(href)(class=classes)= name
 
-
 - var color = pageTarget == '/' ? 'white' : 'blue' ;
 
 header
@@ -25,3 +24,14 @@ header
         +img(`../../images/facebook-${color}.svg`, 'facebook')(loading="eager")
       +link('')
         +img(`../../images/linkedin-${color}.svg`, 'linkedIn')(loading="eager")
+    .menu
+      +img('../../images/icons/menu.svg', 'menu')(id="menuIcon")
+      
+
+.navbarLeft
+  .menuItems
+    +navItem('Trang chủ', '/')
+    +navItem('Dịch vụ', 'services.html')
+    +navItem('Hướng dẫn', 'guide.html')
+    +navItem('Về chúng tôi', 'about.html')
+    +navItem('Liên hệ', 'contact.html')

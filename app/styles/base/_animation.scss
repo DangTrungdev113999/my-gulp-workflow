@@ -1,20 +1,18 @@
-
 .img-lazy {
   width: 100vw;
   opacity: 0;
   transition: all 500ms;
 }
 
-.fade-right {
-  transform: translateX(50%);
-}
+// .fade-right {
+//   transform: translateX(50%);
+// }
 
-.fade-left {
-  transform: translateX(-50%);
-}
+// .fade-left {
+//   transform: translateX(-50%);
+// }
 
-.fade {
-  transform: translateX(0);
-  opacity: 1;
-  transition: all 500ms;
-}
+// .fade {
+//   opacity: 1;
+//   transition: all 0.2s ease;
+// }

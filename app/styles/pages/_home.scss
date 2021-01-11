@@ -63,19 +63,19 @@
     &--user {
       left: 198px;
       top: 3px;
-      z-index: $z-index9;
+      z-index: $z-index5;
     }
     &--user-shadow {
       top: 230px;
       left: 159px;
       mix-blend-mode: multiply;
-      z-index: $z-index8;
+      z-index: $z-index4;
     }
     &--around-items {
       opacity: 0.23;
       top: 60px;
       left: 137px;
-      z-index: $z-index8;
+      z-index: $z-index4;
     }
 
     &--around {
@@ -93,12 +93,12 @@
       // mix-blend-mode: soft-light;
       top: 178px;
       right: 12px;
-      z-index: $z-index8;
+      z-index: $z-index4;
     }
 
     &--voice-ID {
       top: 35px;
-      z-index: $z-index9;
+      z-index: $z-index5;
     }
     &--cloud-1 {
       top: 180px;
@@ -106,7 +106,7 @@
     &--cloud-5 {
       top: 433px;
       left: 200px;
-      z-index: $z-index8;
+      z-index: $z-index4;
     }
     &--cloud-4 {
       top: 138px;
@@ -115,12 +115,12 @@
     &--cloud-2 {
       top: 155px;
       right: 283px;
-      z-index: $z-index9;
+      z-index: $z-index5;
     }
     &--cloud-3 {
       top: 88px;
       right: 198px;
-      z-index: $z-index8;
+      z-index: $z-index4;
     }
   }
 }
