@@ -27,37 +27,80 @@ function lazyloadImg() {
 
 function handleNavbarMenu() {
   const menuIconElm = document.querySelector("#menuIcon");
-  const navbarLeftElm = document.querySelector(".navbarLeft");
+  const navbarMobileElm = document.querySelector(".navbarMobile");
   const menuItemsElm = document.querySelector(".menuItems");
+  const closeIconElm = document.querySelector("#closeIcon");
 
-  if (menuIconElm && navbarLeftElm && menuItemsElm) {
+  const onCloseNavBar = () => {
+    document.body.style.overflow = "visible";
+    navbarMobileElm.style.display = "none";
+    navbarMobileElm.classList.remove("fade");
+    menuItemsElm.classList.remove("sweep-to-left");
+  };
+
+  if (menuIconElm && navbarMobileElm && menuItemsElm) {
     menuIconElm.addEventListener("click", function (e) {
       document.body.style.overflow = "hidden";
-      navbarLeftElm.style.display = "block";
+      navbarMobileElm.style.display = "block";
 
       const openId = setTimeout(function () {
-        navbarLeftElm.classList.add("fade");
+        navbarMobileElm.classList.add("fade");
         menuItemsElm.classList.add("sweep-to-left");
         clearInterval(openId);
       }, 0);
     });
 
-    navbarLeftElm.addEventListener("click", function (e) {
-      document.body.style.overflow = "visible";
-      navbarLeftElm.style.display = "none";
-      navbarLeftElm.classList.remove("fade");
-      menuItemsElm.classList.remove("sweep-to-left");
+    navbarMobileElm.addEventListener("click", function () {
+      onCloseNavBar();
     });
 
     menuItemsElm.addEventListener("click", function (e) {
       e.stopImmediatePropagation();
     });
+
+    closeIconElm.addEventListener("click", function () {
+      onCloseNavBar();
+    });
   }
 }
 
-lazyloadImg();
-handleNavbarMenu();
-AOS.init({
-  disable: "mobile",
-  disableMutationObserver: true,
-});
+function handleToggleNavSubItems() {
+  const servicesElm = document.querySelector("#services");
+  const iconElm = servicesElm.querySelector("img");
+
+  servicesElm.addEventListener("click", function () {
+    const content = this.nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+      iconElm.setAttribute("src", "../../images/icons/down-icon.png");
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+      iconElm.setAttribute("src", "../../images/icons/up-icon.png");
+    }
+  });
+}
+
+function docReady(fn) {
+  if (
+    document.readyState === "complete" ||
+    document.readyState === "interactive"
+  ) {
+    setTimeout(fn, 1);
+  } else {
+    document.addEventListener("DOMContentLoaded", fn);
+  }
+}
+
+function main() {
+  lazyloadImg();
+  handleNavbarMenu();
+  handleToggleNavSubItems();
+  AOS.init({
+    disable: "mobile",
+    startEvent: "DOMContentLoaded",
+    disableMutationObserver: true,
+    once: true,
+  });
+}
+
+docReady(main);

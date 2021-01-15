@@ -1,10 +1,10 @@
 footer.footer
   .container
     .row.justify-content-lg-between(class="footer__top")
-      .col-lg-2.col-md-4.col-sm-12.col-sm-12(class="footer__top__logo")
+      .col-lg-2.col-md-4.col-sm-12.col-xs-12(class="footer__top__logo")
         +img("../../images/logo-white.svg")
         p Accurate & Secure Verification
-      .col-lg-2.col-md-4.col-sm-12.col-sm-12(class="footer__top__contact")
+      .col-lg-2.col-md-4.col-sm-12.col-xs-12(class="footer__top__contact")
         b Liên hệ
         p Phòng 1203 CT1 KĐT Trung Văn, Nam Từ Liêm, Hà Nội  
         p contact@appvest.vn
@@ -14,21 +14,21 @@ footer.footer
             +img(`../../images/facebook-white.svg`, 'facebook')(loading="eager")
           +link('')
             +img(`../../images/linkedin-white.svg`, 'linkedIn')(loading="eager")
-      .col-lg-2.col-md-2.col-sm-12.col-sm-12(class="footer__top__links")
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12(class="footer__top__links")
         b Liên kết nhanh
         +link('') Câu hỏi thường gặp
         +link('') Điều khoản sử dụng
         +link('') Hướng dẫn
-      .col-lg-2.col-md-2.col-sm-12.col-sm-12(class="footer__top__another")
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12(class="footer__top__another")
         +link('') Về chúng tôi
         +link('') Tuyển dụng
         +link('') Liên hệ
   .line
   .container
-    .row.justify-content-between(class="footer__buttom")
-      .col-lg-3
+    .row.justify-content-between.align-content-center(class="footer__buttom")
+      .col-lg-3.col-md-4.col-sm-6.col-xs-12
         span Copyright © 2020 APPVEST.
-      .col-lg-3
+      .col-lg-3.col-md-4.col-sm-6.col-xs-12
         #backToTop
           | Về đầu trang
-          +img('../../images/icons/up.png')
+          +img('../../images/icons/back-to-top.png')

@@ -1,0 +1,140 @@
+.home-banner {
+  margin-top: 110px;
+  background-position: 50px 50px;
+
+  &__left {
+    max-width: 650px;
+    margin-top: 100px;
+    @include maxWidth(991.98px) {
+      margin-top: 0px;
+    }
+    > p {
+      margin-top: 18px;
+    }
+
+    &__btn {
+      margin-top: 56px;
+    }
+    & .trending-up {
+      margin-top: 218px;
+      @include maxWidth(991.98px) {
+        margin-top: 80px;
+      }
+
+      span {
+        color: $color-white;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 30px;
+        margin-right: 9px;
+      }
+    }
+  }
+
+  &__right {
+    width: 560px;
+    height: 665px;
+    position: relative;
+    @include maxWidth(991.98px) {
+      width: 100%;
+      height: 550px;
+    }
+
+    & .rectangle {
+      @include absolute();
+      width: 433px;
+      height: 300px;
+      left: 0px;
+      top: 0px;
+
+      background: #233049;
+      // transform: rotate(60deg);
+      z-index: $z-index1;
+    }
+
+    > img {
+      position: absolute;
+      &:last-child {
+        display: none;
+      }
+      @include maxWidth(991.98px) {
+        &:not(:last-child) {
+          display: none;
+        }
+        &:last-child {
+          display: block;
+          width: 100%;
+          @include maxWidth(575.98px) {
+            margin-top: 50px;
+          }
+        }
+      }
+    }
+    &--mobile {
+      top: 167px;
+      z-index: 10;
+    }
+    &--user {
+      left: 198px;
+      top: 3px;
+      z-index: $z-index5;
+    }
+    &--user-shadow {
+      top: 230px;
+      left: 159px;
+      mix-blend-mode: multiply;
+      z-index: $z-index4;
+    }
+    &--around-items {
+      opacity: 0.23;
+      top: 60px;
+      left: 137px;
+      z-index: $z-index4;
+    }
+
+    &--around {
+      top: 60px;
+      left: 137px;
+      z-index: 1;
+    }
+
+    &--credit-scoring {
+      top: 403px;
+      left: 55px;
+    }
+
+    &--ekyc-profile {
+      // mix-blend-mode: soft-light;
+      top: 178px;
+      right: 12px;
+      z-index: $z-index4;
+    }
+
+    &--voice-ID {
+      top: 35px;
+      z-index: $z-index5;
+    }
+    &--cloud-1 {
+      top: 180px;
+    }
+    &--cloud-5 {
+      top: 433px;
+      left: 200px;
+      z-index: $z-index4;
+    }
+    &--cloud-4 {
+      top: 138px;
+      right: 17px;
+    }
+    &--cloud-2 {
+      top: 155px;
+      right: 283px;
+      z-index: $z-index5;
+    }
+    &--cloud-3 {
+      top: 88px;
+      right: 198px;
+      z-index: $z-index4;
+    }
+  }
+}

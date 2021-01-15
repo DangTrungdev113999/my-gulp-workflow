@@ -4,18 +4,48 @@ mixin navItem(name, href)
   - var classes = ['navbar__item', color, active];
     +link(href)(class=classes)= name
 
+mixin navSub(name, href)
+  - var active = pageTarget == href ? 'navSub--active' : '';
+  - var classes = ['navSub', active];
+    +link(href)(class=classes)= name
+
 - var color = pageTarget == '/' ? 'white' : 'blue' ;
 
 header
-  .logo 
-    +img(`../../images/logo-${color}.svg`, 'logo')(loading="eager")
-    .logo__text(class=`logo__text--${color}`)
-      span Accurate & Secure 
-      span Verification
+  .wrapper-logo
+    +link('/')(class="logo")
+      +img(`../../images/logo-${color}.svg`, 'logo')(loading="eager")
+      .logo__text(class=`logo__text--${color}`)
+        span Accurate & Secure 
+        span Verification
   nav 
     .navbar
       +navItem('Trang chủ', '/')
-      +navItem('Dịch vụ', 'services.html')
+      span.navbar__services(class=`${pageTarget === '/' ? 'navbar__services--white' : 'navbar__services--blue'}`) Dịch vụ
+        .navbar__services__modal
+          +link('')(class="navbar__services__item")
+            +img('../../images/credit-scoring.svg')(loading='lazy')
+            h5  Credit Scoring
+            p 
+              | Credit Scoring là thang điểm nhằm thể hiện 
+              b mức độ uy tín tín dụng
+              | của một khách hàng cá nhân
+          +link('')(class="navbar__services__item")
+            +img('../../images/eKYC.svg')(loading='lazy')
+            h5  eKYC
+            p 
+              | eKYC thực hiện định danh khách  
+              b hàng bằng phương pháp điện tử
+              | thông qua sự hỗ trợ của các công nghệ tiên tiến
+          +link('')(class="navbar__services__item")
+            +img('../../images/voice-ID.svg')(loading='lazy')
+            h5  Credit Scoring
+            p 
+              | Voice ID là hệ thống 
+              b xác thực
+              | và  
+              b nhận diện khách hàng qua giọng nói
+              | bằng công nghệ phân tích Voice Biometrics
       +navItem('Hướng dẫn', 'guide.html')
       +navItem('Về chúng tôi', 'about.html')
       +navItem('Liên hệ', 'contact.html')
@@ -27,11 +57,22 @@ header
     .menu
       +img('../../images/icons/menu.svg', 'menu')(id="menuIcon")
       
-
-.navbarLeft
-  .menuItems
-    +navItem('Trang chủ', '/')
-    +navItem('Dịch vụ', 'services.html')
-    +navItem('Hướng dẫn', 'guide.html')
-    +navItem('Về chúng tôi', 'about.html')
-    +navItem('Liên hệ', 'contact.html')
+  nav.navbarMobile
+    .menuItems
+      +img('../../images/icons/close.svg', 'close-icon')(loading="lazy", id="closeIcon")
+      +navItem('Trang chủ', '/')
+      .divider
+      #services
+        span Dịch vụ 
+        +img('../../images/icons/down-icon.png', 'down-icon')(loading="lazy")
+      #menuSubItems 
+        +navSub('Credit Scoring', 'credit-scoring.html')
+        +navSub('eKYC', 'eKYC.html')
+        +navSub('VoiceID', 'voice-ID.html')
+      .divider
+      +navItem('Hướng dẫn', 'guide.html')
+      .divider
+      +navItem('Về chúng tôi', 'about.html')
+      .divider
+      +navItem('Liên hệ', 'contact.html')
+      .divider

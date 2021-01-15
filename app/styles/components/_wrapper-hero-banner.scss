@@ -3,6 +3,8 @@
   padding-bottom: 72px;
   background-image: url("../../images/background-dot.png");
   background-repeat: repeat;
+  min-height: 800px;
+  overflow: hidden;
   @include relative();
   @include maxWidth(991.98px) {
     padding-bottom: 20px;
@@ -13,6 +15,13 @@
 
   &--blue {
     background-color: $color-blue-dark-2;
+  }
+
+  &--line {
+    background-image: url("../../images/background-dot.png"),
+      url("../../images/rectangle.svg");
+    background-repeat: repeat, no-repeat;
+    background-position: center center, bottom -80px right -80px;
   }
 
   .floading-chat {

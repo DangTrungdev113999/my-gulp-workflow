@@ -27,7 +27,7 @@
   }
   &__right {
     margin-top: -16px;
-    @include maxWidth(991.98px) {
+    @include maxWidth(575.98px) {
       margin-top: 60px;
     }
   }

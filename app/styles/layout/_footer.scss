@@ -95,7 +95,7 @@
     & #backToTop {
       @include flex(row, null, center);
       cursor: pointer;
-      @include maxWidth(991.98px) {
+      @include maxWidth(575.98px) {
         margin-top: 30px;
       }
     }

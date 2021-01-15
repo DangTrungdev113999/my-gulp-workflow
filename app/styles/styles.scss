@@ -1,6 +1,7 @@
 $enable-flex: true;
 $enable-grid-classes: true;
 @import "../../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../../node_modules/aos/src/sass/aos";
 
 @import "helpers/variables";
 @import "helpers/mixins";
@@ -15,9 +16,9 @@ $enable-grid-classes: true;
 @import "layout/header";
 @import "layout/footer";
 
-@import "pages/home";
-
-@import "components/heroBanner";
+@import "components/wrapper-hero-banner";
 @import "components/button";
 @import "components/register";
 @import "components/tag";
+
+@import "pages/home";
