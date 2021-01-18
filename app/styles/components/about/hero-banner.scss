@@ -1,0 +1,33 @@
+.about-banner {
+  padding-top: 100px;
+  @include maxWidth(575.98px) {
+    padding-top: 60px;
+  }
+  &__left {
+    margin-top: 100px;
+    @include maxWidth(575.98px) {
+      margin-top: 0px;
+    }
+    & > p {
+      &:nth-child(2) {
+        margin-top: 40px;
+      }
+      &:nth-child(3) {
+        margin-top: 24px;
+      }
+    }
+
+    & > button {
+      margin-top: 48px;
+    }
+  }
+
+  &__right {
+    > img {
+      max-width: 100%;
+      @include maxWidth(991.98px) {
+        margin-top: 60px;
+      }
+    }
+  }
+}

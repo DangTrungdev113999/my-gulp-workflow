@@ -1,7 +1,6 @@
 $enable-flex: true;
 $enable-grid-classes: true;
 @import "../../node_modules/bootstrap/scss/bootstrap-grid";
-@import "../../node_modules/aos/src/sass/aos";
 
 @import "helpers/variables";
 @import "helpers/mixins";
@@ -22,3 +21,8 @@ $enable-grid-classes: true;
 @import "components/tag";
 
 @import "pages/home";
+@import "pages/eKYC";
+@import "pages/credit-scoring";
+@import "pages/voice-ID";
+@import "pages/about";
+@import "pages/contact";

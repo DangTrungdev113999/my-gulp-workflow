@@ -1,0 +1,32 @@
+mixin listItem
+  .voice-ID-banner__left__list-item
+    +img('../../../images/icons/check.jpg', 'check')(loaidng="lazy")
+    div 
+      block
+
+.container
+  .row.justify-content-lg-between(class='voice-ID-banner')
+      .col-lg-4.col-md-6.col-sm-12.col-xs-12(class='voice-ID-banner__left')
+        h2.heading__primary Voice ID - Xác thực qua giọng nói
+        p 
+          |Voice ID là hệ thống 
+          b xác thực
+          | và 
+          b nhận diện khách hàng qua giọng nói
+          | bằng công nghệ phân tích Voice Biometrics (sinh trắc học giọng nói).
+
+        p Voice ID giúp xác thực danh tính cá nhân khi họ tiếp cận các thông tin bảo mật hoặc xác nhận một yêu cầu quan trọng với các tính năng nổi trội như:
+
+
+        +listItem
+          span Tối ưu với giọng nói người Việt Nam
+        +listItem
+          span Thuật toán khử nhiễu tiên tiến
+        +listItem
+          span 
+            b Speech to Text 
+            | giúp tránh trường hợp ghi âm sẵn
+        button.btn Dùng thử miễn phí    
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        .voice-ID-banner__right
+          +img('../images/voice-ID-banner.svg', 'banner')(loading="eager")

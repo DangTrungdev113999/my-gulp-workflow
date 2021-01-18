@@ -1,0 +1,32 @@
+.credit-scoring-banner {
+  padding-top: 200px;
+  @include maxWidth(991.98px) {
+    padding-top: 100px;
+  }
+  @include maxWidth(575.98px) {
+    padding-top: 60px;
+  }
+  &__left {
+    & > p {
+      &:nth-child(2) {
+        margin-top: 40px;
+      }
+      &:nth-child(3) {
+        margin-top: 24px;
+      }
+    }
+
+    & > button {
+      margin-top: 43px;
+    }
+  }
+
+  &__right {
+    > img {
+      width: 100%;
+      @include maxWidth(991.98px) {
+        margin-top: 60px;
+      }
+    }
+  }
+}

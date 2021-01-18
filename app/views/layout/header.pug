@@ -23,30 +23,29 @@ header
       +navItem('Trang chủ', '/')
       span.navbar__services(class=`${pageTarget === '/' ? 'navbar__services--white' : 'navbar__services--blue'}`) Dịch vụ
         .navbar__services__modal
-          +link('')(class="navbar__services__item")
+          +link('credit-scoring.html')(class="navbar__services__item")
             +img('../../images/credit-scoring.svg')(loading='lazy')
             h5  Credit Scoring
             p 
               | Credit Scoring là thang điểm nhằm thể hiện 
               b mức độ uy tín tín dụng
               | của một khách hàng cá nhân
-          +link('')(class="navbar__services__item")
+          +link('eKYC.html')(class="navbar__services__item")
             +img('../../images/eKYC.svg')(loading='lazy')
             h5  eKYC
             p 
               | eKYC thực hiện định danh khách  
               b hàng bằng phương pháp điện tử
               | thông qua sự hỗ trợ của các công nghệ tiên tiến
-          +link('')(class="navbar__services__item")
+          +link('voice-ID.html')(class="navbar__services__item")
             +img('../../images/voice-ID.svg')(loading='lazy')
-            h5  Credit Scoring
+            h5  VoiceID
             p 
               | Voice ID là hệ thống 
               b xác thực
               | và  
               b nhận diện khách hàng qua giọng nói
               | bằng công nghệ phân tích Voice Biometrics
-      +navItem('Hướng dẫn', 'guide.html')
       +navItem('Về chúng tôi', 'about.html')
       +navItem('Liên hệ', 'contact.html')
     .social
@@ -70,7 +69,6 @@ header
         +navSub('eKYC', 'eKYC.html')
         +navSub('VoiceID', 'voice-ID.html')
       .divider
-      +navItem('Hướng dẫn', 'guide.html')
       .divider
       +navItem('Về chúng tôi', 'about.html')
       .divider

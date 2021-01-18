@@ -1,0 +1,41 @@
+.voice-ID-banner {
+  padding-top: 200px;
+  @include maxWidth(991.98px) {
+    padding-top: 100px;
+  }
+  @include maxWidth(575.98px) {
+    padding-top: 60px;
+  }
+  &__left {
+    & > p {
+      &:nth-child(2) {
+        margin-top: 40px;
+      }
+      &:nth-child(3) {
+        margin-top: 24px;
+        margin-bottom: 24px;
+      }
+    }
+
+    & > button {
+      margin-top: 43px;
+    }
+
+    &__list-item {
+      margin-top: 14px;
+      @include flex();
+      > img {
+        margin-right: 14px;
+      }
+    }
+  }
+
+  &__right {
+    > img {
+      max-width: 100%;
+      @include maxWidth(991.98px) {
+        margin-top: 60px;
+      }
+    }
+  }
+}

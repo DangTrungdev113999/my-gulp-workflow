@@ -113,7 +113,7 @@ nav {
     }
 
     &__item {
-      padding: 24px;
+      padding: 20px;
       color: #172b4d;
       text-decoration: none;
       border: 1px solid #ddd;
@@ -131,7 +131,7 @@ nav {
         z-index: $z-index8;
         &:before {
           content: "";
-          @include absolute($top: -16px, $left: 35%);
+          @include absolute($top: -16px, $left: 50%);
           border-width: 0 24px 16px 24px;
           border-color: transparent transparent #ddd transparent;
           border-style: solid;
@@ -139,7 +139,7 @@ nav {
         }
         &:after {
           content: "";
-          @include absolute($top: -15px, $left: 35%);
+          @include absolute($top: -15px, $left: 50%);
           border-width: 0 24px 16px 24px;
           border-color: transparent transparent #fff transparent;
           border-style: solid;
@@ -148,8 +148,8 @@ nav {
       }
 
       > img {
-        width: 252px;
-        height: 178px;
+        width: 232px;
+        height: 158px;
         padding: 10px;
         background: #f9f9fc;
       }
